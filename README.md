@@ -1,2 +1,0 @@
-# capstone
-GA Capstone Project
