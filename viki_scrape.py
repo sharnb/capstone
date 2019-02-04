@@ -29,6 +29,12 @@ for s_row in range(len(k_titles['container'])):
             shows_comp+=1
             break
         
+        # Break loop after last page of reviews
+        if next_pg != True and json_pg['response'] == []:
+            shows_comp+=1
+            print('%s shows completed' %shows_comp)
+            break
+            
         # Loop through each user review on review pg
         for row in json_pg['response']:
             rating = {}
@@ -41,18 +47,12 @@ for s_row in range(len(k_titles['container'])):
         
         time.sleep(1)
         
-        # Break loop after last page of reviews
-        if next_pg != True and json_pg['response'] == []:
-            shows_comp+=1
-            print('%s shows completed' %shows_comp)
-            break
-    
     time.sleep(2)
     
     # save data to csv after every 10 shows
     if shows_comp % 10 == 0:
         show_rates = pd.DataFrame(ratings)
-        show_rates.to_csv('./data/ratings.csv', index=False)
+        show_rates.to_csv('./data/ratings2.csv', index=False)
 
 # save entire data set to csv after scraping all shows is complete
 show_rates = pd.DataFrame(ratings)
