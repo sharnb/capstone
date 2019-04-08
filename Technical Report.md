@@ -24,16 +24,16 @@ The data was collected from a popular streaming website called [Viki.com](https:
 In addition to not being able to collect all of the user ratings there is a large descrepency between the number of shows each user rated as seen in the graph below. <br>
 ![Top users](https://github.com/sharnb/capstone/blob/master/images/Top50%20users.png)
 <br>There are 183,650 users and 402,426 ratings collected from reviews, where more than 171,580 have written less than 6 show reviews.<br>
-![show ratings](https://github.com/sharnb/capstone/blob/master/Capstone/images/Top50%20shows.png)<br>
+![show ratings](https://github.com/sharnb/capstone/blob/master/images/Top50%20shows.png)<br>
 As expected come shows are more popular than others and thus therefore more people watch and review these shows as seen above. The graph shows that of the top 50 shows most have between 2,000 and 3,000 reviews where as the top 5 shows have over 10,000 reviews.
 ### The Recommender System
 I chose to start off building an item-based collaborative recommender system. I began by creating a pivot table which took in the titles as the index, the user Id's as the columns and the user ratings as the values. I then calculated the cosine similarities using pair wise distances to see how similarly users rated shows to one another. The table below shows the sparse matrix of the first 8 shows alphabetically compared to each other. In this matrix shows are compared on a scale of 0 to 1 where the closer to zero the more similar two shows ratings are and thus highly recommended.<br>
-![sparsematrix](https://github.com/sharnb/capstone/blob/master/Capstone/images/sparse%20matrix.png)<br>
+![sparsematrix](https://github.com/sharnb/capstone/blob/master/images/sparse%20matrix.png)<br>
 ### The Results
 The Recommender is able to search for a show given the full or partial title. The system then prints out the show information including: the title, average rating, and number of ratings. I then recommends the top 10 shows similarly rated by users.
 <br>
 **************
-![Results](https://github.com/sharnb/capstone/blob/master/Capstone/images/Results.png)
+![Results](https://github.com/sharnb/capstone/blob/master/images/Results.png)
 **************
 <br>
 As a search term I put in the first k-drama I ever saw and the 1st show that was recommended was actually the second show I watched because of the first one. Also at least 4 of the shows recommended were the next shows I watched. Thus I think the recommender worked out well.
